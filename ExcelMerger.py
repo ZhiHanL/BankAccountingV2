@@ -34,8 +34,8 @@ class ExcelMerger(object):
             self.ws_dest['D'+str(current_row)] = row[0].value
             key = self.get_category_key(description)
             sub_category, main_category = self._set_category(key)
-            self.ws_dest['I' + str(current_row)] = sub_category
-            self.ws_dest['J' + str(current_row)] = main_category
+            self.ws_dest['J' + str(current_row)] = sub_category
+            self.ws_dest['I' + str(current_row)] = main_category
             current_row = current_row + 1
         self.workbook_dest.save(self.path)
 
