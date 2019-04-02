@@ -62,7 +62,7 @@ class ExcelMerger(object):
             else:
                 sub_category = ''
                 while sub_category == '' or sub_category == 'list':
-                    sub_category = input(f"What is the sub category for {key}?")
+                    sub_category = input(f"What is the sub category for {key}? Enter 'list' to view existing categories")
                     if sub_category == 'list':
                         for k, v in category_data["SubCategories"].items():
                             print(k + " : " + v)
@@ -72,7 +72,8 @@ class ExcelMerger(object):
                 else:
                     is_valid_main_category = False
                     while not is_valid_main_category:
-                        main_category = input(f"What is the main category for {sub_category}?")
+                        main_category = input(f"What is the main category for {sub_category}? "
+                                              f"\n Luxury, Income, Necessity or Transfer")
                         if main_category in category_data["MainCategories"]:
                             is_valid_main_category = True
                         else:
